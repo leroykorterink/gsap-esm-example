@@ -1,10 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import logo from "./logo.svg";
+import { useAnimation } from "@mediamonks/react-animation";
+import "./App.css";
+import gsap from "gsap";
 
 function App() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useAnimation(() => gsap.from(ref, { opacity: 0 }), []);
+
   return (
-    <div className="App">
+    <div className="App" ref={ref}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
