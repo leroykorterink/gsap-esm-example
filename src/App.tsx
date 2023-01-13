@@ -7,7 +7,7 @@ import gsap from "gsap";
 function App() {
   const ref = useRef<HTMLDivElement>(null);
 
-  useAnimation(() => gsap.from(ref, { opacity: 0 }), []);
+  useAnimation(() => gsap.from(ref.current, { opacity: 0 }), []);
 
   return (
     <div className="App" ref={ref}>
